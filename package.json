@@ -1,0 +1,26 @@
+{
+    "name": "model",
+    "version": "0.0.1",
+    "description": "Model",
+    "author": "bp4",
+    "scripts": {
+        "start": "cucumber-js -f json:report/cucumber_report.json ",
+        "test": "cucumber-js -f json:report/cucumber_report.json ",
+        "responsive": "cucumber-js -f json:report/cucumber_report.json --require features\\support --require features\\step_responsive",
+        "debug": "node --inspect-brk=5858 ./node_modules/cucumber/bin/cucumber-js -f json:report/cucumber_report.json  --world-parameters \"{\\\"disableDriverQuit\\\":\\\"true\\\"}\"",
+        "mock": "cucumber-js -f json:report/cucumber_report.json --world-parameters \"{\\\"disableLogin\\\":\\\"true\\\", \\\"enableMockUrl\\\":\\\"true\\\"}\"",
+        "mockdebug": "cucumber-js -f json:report/cucumber_report.json --world-parameters \"{\\\"disableDriverQuit\\\":\\\"true\\\",\\\"disableLogin\\\":\\\"true\\\", \\\"enableMockUrl\\\":\\\"true\\\"}\"",
+        "show": "npm start -- --world-parameters \"{\\\"disableDriverQuit\\\":\\\"true\\\"}\"",
+        "showresponsive": "npm run responsive -- --world-parameters \"{\\\"disableDriverQuit\\\":\\\"true\\\"}\"",
+        "report": "node cucumber-report.js"
+    },
+    "dependencies": {
+        "browserstack-local": "^1.3.5",
+        "chai": "^4.1.2",
+        "chromedriver": "^2.41.0",
+        "cucumber": "^4.2.1",
+        "cucumber-html-reporter": "^4.0.3",
+        "sanitize-filename": "^1.6.1",
+        "selenium-webdriver": "^4.0.0-alpha.1"
+    }
+}
